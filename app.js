@@ -141,7 +141,7 @@ app.post("/webhook", function (req, res) {
                 }
               };
 
-              sendMessage(senderId, {attachment: message_card});
+              sendMessage(senderId, message_card);
         }
       } else if (message.attachments) {
         sendMessage(senderId, {text: "Sorry, I don't understand your request."});
