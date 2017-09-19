@@ -128,8 +128,9 @@ app.post("/webhook", function (req, res) {
                     "buttons":[
                       {
                         "type":"web_url",
-                        "url":"file:///Users/carsonyau/Documents/clare-commit-update/Payment_Test/index.html",
-                        "title":"Visit Messenger"
+                        "url":"https://www.google.com",
+                        "title":"View Item",
+                        "webview_height_ratio": "compact"
                       }
                     ]
                   }
