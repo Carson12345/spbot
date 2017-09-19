@@ -125,9 +125,7 @@ app.post("/webhook", function (req, res) {
                   payload: {
                     template_type: "generic",
                     elements: [{
-                      title: movieObj.Title,
                       subtitle: "Is this the movie you are looking for?",
-                      image_url: movieObj.Poster === "N/A" ? "http://placehold.it/350x150" : movieObj.Poster,
                       buttons: [{
                         type:"web_url",
                         url:"file:///Users/carsonyau/Documents/clare-commit-update/Payment_Test/index.html",
@@ -142,7 +140,8 @@ app.post("/webhook", function (req, res) {
                   }
                 }
               };
-              sendMessage(senderId, message_card);
+
+              sendMessage(senderId, {attachment: message_card});
         }
       } else if (message.attachments) {
         sendMessage(senderId, {text: "Sorry, I don't understand your request."});
