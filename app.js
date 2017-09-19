@@ -120,26 +120,21 @@ app.post("/webhook", function (req, res) {
 
 
             var message_card = {
-                attachment: {
-                  type: "template",
-                  payload: {
-                    template_type: "generic",
-                    elements: [{
-                      subtitle: "Is this the movie you are looking for?",
-                      buttons: [{
-                        type:"web_url",
-                        url:"file:///Users/carsonyau/Documents/clare-commit-update/Payment_Test/index.html",
-                        title:"View Item",
-                        webview_height_ratio: "compact"
-                      }, {
-                        type: "postback",
-                        title: "No",
-                        payload: "Incorrect"
-                      }]
-                    }]
+                "attachment":{
+                  "type":"template",
+                  "payload":{
+                    "template_type":"button",
+                    "text":"What do you want to do next?",
+                    "buttons":[
+                      {
+                        "type":"web_url",
+                        "url":"https://www.messenger.com",
+                        "title":"Visit Messenger"
+                      }
+                    ]
                   }
                 }
-              };
+              }
 
               sendMessage(senderId, message_card);
         }
