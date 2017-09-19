@@ -128,16 +128,14 @@ app.post("/webhook", function (req, res) {
                       title: movieObj.Title,
                       subtitle: "Is this the movie you are looking for?",
                       image_url: movieObj.Poster === "N/A" ? "http://placehold.it/350x150" : movieObj.Poster,
-                      buttons: [{
-                        type:"web_url",
-                        url:"file:///Users/carsonyau/Documents/clare-commit-update/Payment_Test/index.html",
-                        title:"View Item",
-                        webview_height_ratio: "compact"
-                      }, {
-                        type: "postback",
-                        title: "No",
-                        payload: "Incorrect"
-                      }]
+                      buttons:[
+                        {
+                          "type":"web_url",
+                          "url":"https://petersfancyapparel.com/classic_white_tshirt",
+                          "title":"View Item",
+                          "webview_height_ratio": "compact"
+                        }
+                      ]
                     }]
                   }
                 }
