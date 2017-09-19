@@ -117,14 +117,7 @@ app.post("/webhook", function (req, res) {
             break;
   
           default:
-            sendMessage(senderId, {text: formattedMsg});
 
-            var form = {
-                amount: "3000.0",
-                merchantId: '1',
-                secureHash: "44f3760c201d3688440f62497736bfa2aadd1bc0"
-            };
-            var formData = querystring.stringify(form);
 
             var message_card = {
                 attachment: {
@@ -149,6 +142,7 @@ app.post("/webhook", function (req, res) {
                   }
                 }
               };
+              sendMessage(senderId, {text: message_card});
         }
       } else if (message.attachments) {
         sendMessage(senderId, {text: "Sorry, I don't understand your request."});
