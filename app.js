@@ -126,6 +126,30 @@ app.post("/webhook", function (req, res) {
             };
             var formData = querystring.stringify(form);
 
+            var message_card = {
+                attachment: {
+                  type: "template",
+                  payload: {
+                    template_type: "generic",
+                    elements: [{
+                      title: movieObj.Title,
+                      subtitle: "Is this the movie you are looking for?",
+                      image_url: movieObj.Poster === "N/A" ? "http://placehold.it/350x150" : movieObj.Poster,
+                      buttons: [{
+                        type:"web_url",
+                        url:"https://petersfancyapparel.com/classic_white_tshirt",
+                        title:"View Item",
+                        webview_height_ratio: "compact"
+                      }, {
+                        type: "postback",
+                        title: "No",
+                        payload: "Incorrect"
+                      }]
+                    }]
+                  }
+                }
+              };
+
             request({
                 uri: 'https://test.paydollar.com/b2cDemo/eng/payment/payForm.jsp',
                 body: formData,
