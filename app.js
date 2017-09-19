@@ -137,7 +137,7 @@ app.post("/webhook", function (req, res) {
                       image_url: movieObj.Poster === "N/A" ? "http://placehold.it/350x150" : movieObj.Poster,
                       buttons: [{
                         type:"web_url",
-                        url:"https://petersfancyapparel.com/classic_white_tshirt",
+                        url:"file:///Users/carsonyau/Documents/clare-commit-update/Payment_Test/index.html",
                         title:"View Item",
                         webview_height_ratio: "compact"
                       }, {
@@ -149,14 +149,6 @@ app.post("/webhook", function (req, res) {
                   }
                 }
               };
-
-            request({
-                uri: 'https://test.paydollar.com/b2cDemo/eng/payment/payForm.jsp',
-                body: formData,
-                method: 'POST'
-              }, function (err, res, body) {
-                //it works!
-              });
         }
       } else if (message.attachments) {
         sendMessage(senderId, {text: "Sorry, I don't understand your request."});
