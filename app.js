@@ -117,7 +117,7 @@ app.post("/webhook", function (req, res) {
             break;
   
           default:
-            sendMessage(senderId, {text: "on99"});
+            sendMessage(senderId, {text: formattedMs});
         }
       } else if (message.attachments) {
         sendMessage(senderId, {text: "Sorry, I don't understand your request."});
