@@ -128,7 +128,7 @@ app.post("/webhook", function (req, res) {
                     "buttons":[
                       {
                         "type":"web_url",
-                        "url":"https://petersfancyapparel.com/classic_white_tshirt",
+                        "url":"http://marketviewbot.azurewebsites.net/",
                         "title":"View Item",
                         "webview_height_ratio": "compact"
                       }
